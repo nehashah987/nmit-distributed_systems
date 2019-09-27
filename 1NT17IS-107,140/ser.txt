@@ -1,0 +1,18 @@
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+public class ser {
+	public static void main(String[] args) throws IOException {
+	ServerSocket s1=new ServerSocket(300);
+	Socket ss=s1.accept();
+	Scanner sc=new Scanner(ss.getInputStream());
+	int number = sc.nextInt();
+	int temp = number*number*number;
+	PrintStream p=new PrintStream(ss.getOutputStream());
+	p.println(temp);
+	s1.close();
+	ss.close();
+	sc.close();
+
+}}
